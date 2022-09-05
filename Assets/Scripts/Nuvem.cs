@@ -38,5 +38,9 @@ public class Nuvem : MonoBehaviour
     }
         void Voar(Vector2 mov){
         transform.Translate(mov);
+
     }
+        public void DestroirNuvem(){
+            Destroy(gameObject);
+        }
 }

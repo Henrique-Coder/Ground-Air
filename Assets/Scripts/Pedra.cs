@@ -53,4 +53,8 @@ public class Pedra : MonoBehaviour
         }
         return raycastHit.collider != null;
     }
+
+    public void DestroirPedra(){
+        Destroy(gameObject);
+    }
 }
