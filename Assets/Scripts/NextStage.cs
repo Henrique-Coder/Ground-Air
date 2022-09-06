@@ -25,4 +25,13 @@ public class NextStage : MonoBehaviour
             groundR = true;
         }
     }
+    void OnTriggerExit2D(Collider2D notwin){
+        if(notwin.gameObject.tag == "PlayerCloud"){
+            cloudR = false;
+        }
+        if(notwin.gameObject.tag == "PlayerGround"){
+            groundR = false;
+        }
+    
+    }
 }

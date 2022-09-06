@@ -41,6 +41,8 @@ public class Nuvem : MonoBehaviour
 
     }
         public void DestroirNuvem(){
+            if(gameObject != null){            
             Destroy(gameObject);
+            }
         }
 }

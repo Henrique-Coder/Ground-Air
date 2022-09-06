@@ -12,8 +12,9 @@ public class Water : MonoBehaviour
     [SerializeField]private Image BotaoMorte2;
     [SerializeField]private Text TextoBotaoMorte1;
     [SerializeField]private Text TextoBotaoMorte2;
-    [SerializeField] private Pedra scriptPedra;
-    [SerializeField] private Nuvem scriptNuvem;
+    [SerializeField]private Pedra scriptPedra;
+    [SerializeField]private Nuvem scriptNuvem;
+
     
 
     void Start(){

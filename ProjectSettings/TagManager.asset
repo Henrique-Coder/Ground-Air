@@ -9,6 +9,7 @@ TagManager:
   - PlayerCloud
   - Button
   - Elevator
+  - Heat
   layers:
   - Default
   - TransparentFX

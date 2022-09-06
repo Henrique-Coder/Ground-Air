@@ -55,6 +55,8 @@ public class Pedra : MonoBehaviour
     }
 
     public void DestroirPedra(){
+        if(gameObject != null){
         Destroy(gameObject);
+        }
     }
 }
