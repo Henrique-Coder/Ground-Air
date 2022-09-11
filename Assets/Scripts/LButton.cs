@@ -6,11 +6,13 @@ public class LButton : MonoBehaviour
 {
     [SerializeField] private Transform LavaPlataform;
     [SerializeField] private GameObject LavaPlataformSpawn;
-    [SerializeField] private Heat Lavascript;
+    [SerializeField] private Lava Lavascript;
     void OnTriggerEnter2D(Collider2D lavabutton){
-        if(plataformbutton.gameObject.tag == "PlayerGround"){
+        if(lavabutton.gameObject.tag == "PlayerGround"){
             Instantiate(LavaPlataform, LavaPlataformSpawn.transform.position, Quaternion.identity);
             Destroy(gameObject);
+            Lavascript.heatdestroy();
         }
+
     }
 }
