@@ -13,10 +13,7 @@ public class EButton : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnTriggerStay2D(Collider2D collider){
         if(collider.GetComponent<BoxCollider2D>() != null){

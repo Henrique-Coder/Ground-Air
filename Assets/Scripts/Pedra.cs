@@ -6,6 +6,7 @@ public class Pedra : MonoBehaviour
 {
     private Rigidbody2D RB2D;
     private BoxCollider2D boxCollider2d;
+    private bool parado;
     Vector2 mov;
     float jumpvel;
     [SerializeField] private LayerMask platformLayerMask;
@@ -17,6 +18,7 @@ public class Pedra : MonoBehaviour
         jumpvel = 0.0f;
         RB2D = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
+        parado = true;
     }
 
     // Update is called once per frame
@@ -26,15 +28,27 @@ public class Pedra : MonoBehaviour
             mov.x = 0.01f;
             Andar(mov);
             mov.x = 0.0f;
-        }
+            GetComponent<Animator>().SetBool("idleing", true);
+            parado = false;
+            transform.localScale = new Vector2(1, 1);
+            }
         if(Input.GetKey(KeyCode.LeftArrow)){
             mov.x = -0.01f;
             Andar(mov);
             mov.x = 0.0f;
+            GetComponent<Animator>().SetBool("idleing", true);
+            parado = false;
+            transform.localScale = new Vector2(-1, 1);
         }
         if(Input.GetKey(KeyCode.UpArrow) && IsGrounded()){
             jumpvel = 5f;
             RB2D.velocity = Vector2.up * jumpvel;
+        }
+        if(parado){
+            GetComponent<Animator>().SetBool("idleing", false);
+        }
+        if(mov.x == 0){
+            parado = true;
         }
     }
     void Andar(Vector2 mov){

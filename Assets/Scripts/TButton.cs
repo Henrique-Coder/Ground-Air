@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class TButton : MonoBehaviour
 {
-    [SerializeField] private Transform TetoDiminuido;
-    [SerializeField] private GameObject TetoAtual;
+    [SerializeField] private GameObject TM;
+    [SerializeField] private TMenor tetomovelscript;
+    
     // Start is called before the first frame update
+    void Start(){
 
+    }
     void OnTriggerEnter2D(Collider2D teto){
         if(teto.gameObject.tag == "PlayerGround"){
-            Destroy(TetoAtual);
-            Instantiate(TetoDiminuido, new Vector2(-1.18f, 1.642f), Quaternion.identity);
+            tetomovelscript.mudarescala();
             Destroy(gameObject);
         }
     }

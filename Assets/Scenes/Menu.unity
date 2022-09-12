@@ -754,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5821bb2873f041844ba689922799b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cena: Options
+  Cena: Credits
 --- !u!1 &1171505547
 GameObject:
   m_ObjectHideFlags: 0
