@@ -27,7 +27,7 @@ public class PlataformRotation : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D plataform){
-        if(plataform.gameObject.tag == "PlayerGround" || plataform.gameObject.tag == "PlayerAir"){
+        if(plataform.gameObject.tag == "PlayerGround" || plataform.gameObject.tag == "PlayerCloud"){
             SceneManager.LoadScene(Cena);
         }
     }
