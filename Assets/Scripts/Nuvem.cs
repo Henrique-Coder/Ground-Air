@@ -23,6 +23,7 @@ public class Nuvem : MonoBehaviour
             mov.x = 0.0f;
             parado = false;
             transform.localScale = new Vector2(1, 1);
+            GetComponent<Animator>().SetBool("Airidle", false);
         }
         if(Input.GetKey(KeyCode.A)){
             mov.x = -0.01f;
@@ -30,16 +31,25 @@ public class Nuvem : MonoBehaviour
             mov.x = 0.0f;
             parado = false;
             transform.localScale = new Vector2(-1, 1);
+            GetComponent<Animator>().SetBool("Airidle", false);
         }
         if(Input.GetKey(KeyCode.W)){
             mov.y = 0.01f;
             Voar(mov);
             mov.y = 0.0f;
+            GetComponent<Animator>().SetBool("Airidle", true);
         }
         if(Input.GetKey(KeyCode.S)){
             mov.y = -0.01f;
             Voar(mov);
             mov.y = 0.0f;
+            GetComponent<Animator>().SetBool("Airidle", true);
+        }
+        if(parado){
+            GetComponent<Animator>().SetBool("Airidle", true);
+        }
+        if(mov.x == 0 || mov.y == 0){
+            parado = true;
         }
     }
         void Voar(Vector2 mov){
